@@ -1,19 +1,23 @@
+int count = 0;
 void setup()
 {
-  background(100);
   size(600, 600);
   noLoop();
 }
 void draw()
 {
+  background(100);
+  count = 0;
   for (int y = 50; y <= 600; y = y + 100)
   {
     for (int x = 50; x <= 600; x = x + 100)
     { 
       Die vincent = new Die(x, y);
+      count = count + vincent.r;
       vincent.show();
     }
   }
+  text(count, 300, 300);
 }
 
 void mousePressed()
